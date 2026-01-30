@@ -11,11 +11,13 @@
     @font-face {
       font-family: 'Poppins';
       src: url('src/font/Poppins-Regular.ttf') format('truetype');
+      font-display: swap;
     }
 
     @font-face {
       font-family: 'PoppinsSemi';
       src: url('src/font/Poppins-SemiBold.ttf') format('truetype');
+      font-display: swap;
     }
 
     * {
@@ -28,6 +30,8 @@
     body {
       background: #f7f7f7;
       color: #1a1a1a;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
     /* HEADER */
@@ -45,6 +49,7 @@
 
     .header-inner img {
       max-width: 220px;
+      height: auto;
     }
 
     .page {
@@ -67,6 +72,7 @@
       border-radius: 8px;
       border: none;
       box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      background: #000;
     }
 
     /* PALETA */
@@ -78,8 +84,8 @@
     }
 
     .color-box {
-      height: 120px;
-      border-radius: 8px;
+      height: 140px;
+      border-radius: 6px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -87,7 +93,14 @@
       font-size: 14px;
       color: #fff;
       padding: 10px;
-      box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      cursor: default;
+    }
+
+    .color-box:hover {
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.18);
     }
 
     @media (max-width: 600px) {
@@ -97,31 +110,31 @@
     }
 
     /* CORES */
-    .p1 { background:#d7e3ea; }
-    .p2 { background:#7a7d7c; }
-    .p3 { background:#5a3b2e; }
-    .p4 { background:#b84b6a; }
-    .p5 { background:#e6d6f0; }
-    .p6 { background:#bfcde6; }
-    .p7 { background:#4f4aa3; }
-    .p8 { background:#3b2f7d; }
-    .p9 { background:#b2b47a; }
-    .p10{ background:#8c5a3c; }
-    .p11{ background:#f2f3e6; color:#000;}
-    .p12{ background:#b87333; }
-    .p13{ background:#2fa37c; }
-    .p14{ background:#7fa36a; }
-    .p15{ background:#004f4f; }
-    .p16{ background:#e04b3f; }
-    .p17{ background:#7b1e2b; }
-    .p18{ background:#2f5d50; }
-    .p19{ background:#3f6b63; }
+    .p1  { background:#d1cbcb; } /* 13-4303 TCX */
+    .p2  { background:#989493; } /* 17-5104 TCX */
+    .p3  { background:#573c35; } /* 19-1215 TCX */
+    .p4  { background:#ce849d; } /* 16-2215 TCX */
+    .p5  { background:#e1c3cb; } /* 13-2803 TCX */
+    .p6  { background:#b0bcd4; } /* 14-4112 TCX */
+    .p7  { background:#3f54a3; } /* 18-3949 TCX */
+    .p8  { background:#30344d; } /* 19-3932 TCX */
+    .p9  { background:#a69464; } /* 16-0726 TCX */
+    .p10 { background:#a97c45; } /* 17-1129 TCX */
+    .p11 { background:#f1ecac; color:#000; } /* 11-0618 TCX */
+    .p12 { background:#c1642b; } /* 18-1163 TCX */
+    .p13 { background:#58ab65; } /* 16-6339 TCX */
+    .p14 { background:#90a383; } /* 16-0220 TCX */
+    .p15 { background:#414c3c; } /* 19-5920 TCX */
+    .p16 { background:#c91d35; } /* 18-1657 TCX */
+    .p17 { background:#792c3c; } /* 19-1934 TCX */
+    .p18 { background:#41354d; } /* 19-3725 TCX */
+    .p19 { background:#877494; } /* 18-3718 TCX */
 
-    .preto   { background:#000; }
-    .branco  { background:#fff; color:#000; }
-    .prata   { background:#c0c0c0; color:#000; }
-    .dourado { background:#d4af37; color:#000; }
-    .ouro    { background:#6b6f2a; }
+    .preto   { background:#2b2b2b; }  
+    .branco  { background:#f5f6f7; color:#000; }  
+    .prata   { background:#b7bcc2; color:#000; }  
+    .dourado { background:#e6b65c; color:#000; }  
+    .ouro    { background:#9a8f3a; }
 
     /* PDF */
     .container-pdf iframe {
@@ -130,6 +143,7 @@
       border-radius: 8px;
       border: none;
       box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      background: #fff;
     }
 
     .download-btn {
@@ -161,7 +175,7 @@
 
 <header class="site-header">
   <div class="header-inner">
-    <img src="src/img/logo-trajetos.png">
+    <img src="src/img/logo-trajetos.png" alt="Logo Trajetos">
   </div>
 </header>
 
@@ -169,7 +183,8 @@
 
   <section class="container-video">
     <iframe 
-      src="https://www.youtube.com/embed/L34g-U46gwM" 
+      src="https://www.youtube.com/embed/L34g-U46gwM"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen>
     </iframe>
   </section>
@@ -177,6 +192,7 @@
   <h2>Paleta de Cores</h2>
 
   <section class="container-colors">
+    <!-- todas as cores -->
     <div class="color-box p1">13-4303 TCX</div>
     <div class="color-box p2">17-5104 TCX</div>
     <div class="color-box p3">19-1215 TCX</div>
@@ -196,11 +212,11 @@
     <div class="color-box p17">19-1934 TCX</div>
     <div class="color-box p18">19-3725 TCX</div>
     <div class="color-box p19">18-3718 TCX</div>
-    <div class="color-box preto">Preto</div>
-    <div class="color-box branco">Branco</div>
-    <div class="color-box prata">Prata</div>
-    <div class="color-box dourado">Dourado</div>
-    <div class="color-box ouro">Ouro Oliva</div>
+    <div class="color-box preto">19-3911 TCX</div>
+    <div class="color-box branco">11-4101 TCX</div>
+    <div class="color-box prata">14-4503 TCX</div>
+    <div class="color-box dourado">15-1062 TCX</div>
+    <div class="color-box ouro">16-0639 TCX</div>
   </section>
 
   <h2>PDF da Coleção</h2>
@@ -210,25 +226,13 @@
   </section>
 
   <a 
-    href="src/pdf/virtual-colecao-trajetos.pdf" 
+    href="src/pdf/virtual-colecao-trajetos.pdf"
     class="download-btn"
-    onclick="forceDownload(event)">
+    download="Colecao-Trajetos.pdf">
     Download do PDF
   </a>
 
 </div>
-
-<script>
-function forceDownload(e) {
-  e.preventDefault();
-  const link = document.createElement("a");
-  link.href = "src/pdf/virtual-colecao-trajetos.pdf";
-  link.download = "Colecao-Trajetos.pdf";
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-}
-</script>
 
 </body>
 </html>
